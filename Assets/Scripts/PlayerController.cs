@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameInput gameInput;
     [SerializeField] private float jumpForce = 7f;
 
-
+    [SerializeField] private float rotationSpeed = 300f;
     private bool isWalking;
     private Rigidbody rb;
 
@@ -27,12 +27,15 @@ public class PlayerController : MonoBehaviour
     private void HandleMovement()
     {
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
-        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
+
+
+        Vector3 moveDir = transform.forward * inputVector.y;
+
         transform.position += moveDir * moveSpeed * Time.deltaTime;
 
-        isWalking = moveDir != Vector3.zero;
-        float rotateSpeed = 10f;
-        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
+        transform.Rotate(Vector3.up, inputVector.x * rotationSpeed * Time.deltaTime);
+
+        isWalking = inputVector.y != 0;
 
     }
 
