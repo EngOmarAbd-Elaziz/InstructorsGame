@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameInput gameInput;
     [SerializeField] private float jumpForce = 7f;
 
-    [SerializeField] private float rotationSpeed = 300f;
+    [SerializeField] private float rotationSpeed = 600f;
+    private Vector3 airMoveDirection = Vector3.zero;
     private bool isWalking;
     private Rigidbody rb;
 
@@ -24,21 +25,39 @@ public class PlayerController : MonoBehaviour
         HandleJump();
     }
 
+
+
     private void HandleMovement()
     {
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
 
 
-        Vector3 moveDir = transform.forward * inputVector.y;
+        if (IsGrounded())
+        {
 
-        transform.position += moveDir * moveSpeed * Time.deltaTime;
+            Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
 
-        transform.Rotate(Vector3.up, inputVector.x * rotationSpeed * Time.deltaTime);
+            if (moveDir != Vector3.zero)
+                moveDir = moveDir.normalized;
 
-        isWalking = inputVector.y != 0;
 
+            airMoveDirection = moveDir * moveSpeed;
+
+
+            transform.position += moveDir * moveSpeed * Time.deltaTime;
+
+            isWalking = moveDir != Vector3.zero;
+        }
+
+
+        else
+        {
+
+            transform.position += airMoveDirection * Time.deltaTime;
+
+
+        }
     }
-
     public bool IsWalking()
     {
         return isWalking;
