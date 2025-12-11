@@ -2,15 +2,29 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    public Transform player;
-    public Vector3 offset = new Vector3(0, 2, -4);
-    public float smoothSpeed = 10f;
+    public float sensX = 5f;
+    public float sensY = 5f;
 
-    void LateUpdate()
+    private Transform player;
+    private float xRotation;
+    private float yRotation;
+
+    private void Start()
     {
-        Vector3 targetPos = player.TransformPoint(offset);
-        transform.position = Vector3.Lerp(transform.position, targetPos, smoothSpeed * Time.deltaTime);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
-        transform.LookAt(player.position + Vector3.up * 1.5f);
+    }
+
+    private void Update()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * sensX;
+        float mouseY = Input.GetAxis("Mouse Y") * sensY;
+
+        yRotation += mouseX;
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
     }
 }
