@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71bd862205b0844dbf504995a4e57fa, type: 3}
+  m_Name: FireBallAbility
+  m_EditorClassIdentifier: Assembly-CSharp::FireBallAbility
+  name: FireBall
+  cooldownTime: 2
+  activeTime: 0.1
+  fireBallPrefab: {fileID: 5981928208513840586, guid: bc106a2945749904aa75a29c157652d0, type: 3}
+  velocity: 6

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthBarUI : MonoBehaviour
 {
-    private HealthSystem healthSystem;
+    public HealthSystem healthSystem;
     private int healthAmount = 100;
     public event EventHandler OnLowHealthReached;
 
