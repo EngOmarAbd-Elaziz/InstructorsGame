@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private PlayerData playerData;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private GameObject player;
     private Vector2 moveInput;
@@ -26,4 +27,5 @@ public class PlayerController : MonoBehaviour
         transform.Translate(move * moveSpeed * Time.deltaTime, Space.World);
     }
 
+    public PlayerData PlayerData => playerData;
 }

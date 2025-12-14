@@ -1162,9 +1162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d909cead4dac2e46b0ed20283074276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowPlayer
-  player: {fileID: 2145948166}
-  offset: {x: 0, y: 2, z: -4}
-  smoothSpeed: 10
+  sensX: 5
+  sensY: 5
 --- !u!1 &705820933
 GameObject:
   m_ObjectHideFlags: 0
@@ -2912,6 +2911,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9571e764099d04b47a82c4d8209d8c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBar
+  healthSystem:
+    health: 0
+  healthAmount: 100
   healthSlider: {fileID: 145043854}
   followUpHealthSlider: {fileID: 1227865149}
   damageButton: {fileID: 1361153279}
@@ -2979,10 +2981,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18ba59fb1298c84dad3e8dddd1200f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  playerData:
+    <HealthBarUI>k__BackingField: {fileID: 2038534524}
   moveSpeed: 12
-  gameInput: {fileID: 1506090476}
-  jumpForce: 7
-  rotationSpeed: 800
+  player: {fileID: 2145948160}
 --- !u!136 &2145948163
 CapsuleCollider:
   m_ObjectHideFlags: 0

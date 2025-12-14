@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthBarUI : MonoBehaviour
 {
     public HealthSystem healthSystem;
-    private int healthAmount = 100;
+    [SerializeField] private int healthAmount = 100;
     public event EventHandler OnLowHealthReached;
 
     [SerializeField] private Slider healthSlider;

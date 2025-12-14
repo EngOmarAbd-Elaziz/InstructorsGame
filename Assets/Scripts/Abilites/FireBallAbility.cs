@@ -8,7 +8,7 @@ public class FireBallAbility : AbilitesSO
 
     public override void Activate(GameObject parent)
     {
-        Instantiate(fireBallPrefab , parent.transform.position,
+        Instantiate(fireBallPrefab , parent.transform.position + new Vector3(0 , 0 , 3),
                     fireBallPrefab.transform.rotation, parent.transform);
     }
 }
