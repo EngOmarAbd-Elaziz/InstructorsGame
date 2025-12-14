@@ -2,7 +2,7 @@ using UnityEngine;
 [System.Serializable]
 public class HealthSystem
 {
-    [SerializeField] private float health;
+    private float health;
     private float healthMax;
     public HealthSystem(float healthMax) {this.health = healthMax; this.healthMax = healthMax;}
     public float GetHealth(){ return health; } 

@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class GameInput : MonoBehaviour
 {
+    public enum PlayerID 
+    {
+        Player1,
+        Player2
+    }
+
+    [SerializeField] private PlayerID playerID;
     private PlayerInputActions playerInputActions;
+    
     private void Awake()
     {
         playerInputActions = new PlayerInputActions();
@@ -11,12 +19,25 @@ public class GameInput : MonoBehaviour
 
     public Vector2 GetMovementVectorNormalized()
     {
-        Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
-        return inputVector.normalized;
+        if (playerID == PlayerID.Player1)
+        {
+            return playerInputActions.Player.Move_P1.ReadValue<Vector2>();
+        }
+        else 
+        {
+            return playerInputActions.Player.Move_P2.ReadValue<Vector2>();
+        }
     }
 
     public bool IsJumpPressed()
     {
-        return playerInputActions.Player.Jump.WasPressedThisFrame();
+        if (playerID == PlayerID.Player1)
+        {
+            return playerInputActions.Player.Jump_P1.WasPressedThisFrame();
+        }
+        else
+        {
+            return playerInputActions.Player.Jump_P2.WasPressedThisFrame();
+        }
     }
 }

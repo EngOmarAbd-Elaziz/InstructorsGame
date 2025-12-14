@@ -93,7 +93,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             ""id"": ""3fb5795b-7a89-4392-b4c5-5bad42c27969"",
             ""actions"": [
                 {
-                    ""name"": ""Move"",
+                    ""name"": ""Move_P1"",
                     ""type"": ""Value"",
                     ""id"": ""e770bc89-2fe3-405d-9493-e0fd53368cf3"",
                     ""expectedControlType"": ""Vector2"",
@@ -102,7 +102,16 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Jump"",
+                    ""name"": ""Move_P2"",
+                    ""type"": ""Value"",
+                    ""id"": ""a9c0fb96-c93b-47f0-83a8-4a33bbb2fecf"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Jump_P1"",
                     ""type"": ""Button"",
                     ""id"": ""102b6efb-437e-4deb-a6d2-89775c66d933"",
                     ""expectedControlType"": """",
@@ -111,7 +120,16 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SpellCast"",
+                    ""name"": ""Jump_P2"",
+                    ""type"": ""Button"",
+                    ""id"": ""51337613-310b-402f-b067-00c70f1bf2c1"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpellCast_P1"",
                     ""type"": ""Button"",
                     ""id"": ""a8062d8f-b190-48d2-bc85-d73add3c5407"",
                     ""expectedControlType"": """",
@@ -120,9 +138,27 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Dash"",
+                    ""name"": ""SpellCast_P2"",
+                    ""type"": ""Button"",
+                    ""id"": ""b80b2188-d652-4063-9b58-b39a8ab5443c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dash_P1"",
                     ""type"": ""Button"",
                     ""id"": ""e2fa9f40-c88e-4d06-94ca-7f67da5fcaad"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dash_P2"",
+                    ""type"": ""Button"",
+                    ""id"": ""4286df75-430e-42a8-aa9b-395e2b76c764"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -137,7 +173,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Move_P1"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -148,7 +184,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
-                    ""action"": ""Move"",
+                    ""action"": ""Move_P1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -159,7 +195,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
-                    ""action"": ""Move"",
+                    ""action"": ""Move_P1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -170,7 +206,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
-                    ""action"": ""Move"",
+                    ""action"": ""Move_P1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -181,62 +217,62 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
-                    ""action"": ""Move"",
+                    ""action"": ""Move_P1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""Arrows"",
-                    ""id"": ""37b6449a-1f5f-4019-993a-d38e10424bb5"",
+                    ""id"": ""7529da5f-2fc0-4e12-bd55-beb1a4383209"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Move_P2"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""224fdc71-5b84-44f6-911d-079a95cf9d6a"",
+                    ""id"": ""4193c4b1-93b1-44a8-a977-6edd3a1554dc"",
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard2"",
-                    ""action"": ""Move"",
+                    ""action"": ""Move_P2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""a916e27d-08a0-4620-9052-164b3c2e2f80"",
+                    ""id"": ""90fba84d-98bd-41c0-8247-118696283fad"",
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard2"",
-                    ""action"": ""Move"",
+                    ""action"": ""Move_P2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""c0bcc705-74a8-4729-af7b-5a6d2a463670"",
+                    ""id"": ""b15afbd4-ca28-490c-afb5-790a665a3237"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard2"",
-                    ""action"": ""Move"",
+                    ""action"": ""Move_P2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""5511455f-0f60-4d8e-8a5e-c18053a44d57"",
+                    ""id"": ""f54db486-2a44-415c-8f5c-5ec91e2f1cdc"",
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard2"",
-                    ""action"": ""Move"",
+                    ""action"": ""Move_P2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -247,62 +283,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
-                    ""action"": ""Jump"",
+                    ""action"": ""Jump_P1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""47ff0c45-538d-44f8-93f5-c65830b75327"",
+                    ""id"": ""9938ff32-5e93-4888-9faa-8a07f7d5da32"",
                     ""path"": ""<Keyboard>/rightAlt"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard2"",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e564fbf4-4d45-4cda-9629-3d4ef1fd6e8c"",
-                    ""path"": ""<Keyboard>/k"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard2"",
-                    ""action"": ""SpellCast"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b390049d-50c1-468e-9ab9-a18420df8e4a"",
-                    ""path"": ""<Keyboard>/i"",
-                    ""interactions"": ""Hold"",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard2"",
-                    ""action"": ""SpellCast"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""95970371-a5fd-40dc-9c60-8ecde7c0adea"",
-                    ""path"": ""<Keyboard>/l"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard2"",
-                    ""action"": ""SpellCast"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""35d4677b-215e-4b66-9ae2-ce28022f9f5e"",
-                    ""path"": ""<Keyboard>/j"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard2"",
-                    ""action"": ""SpellCast"",
+                    ""action"": ""Jump_P2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -313,7 +305,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
-                    ""action"": ""SpellCast"",
+                    ""action"": ""SpellCast_P1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -324,7 +316,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
-                    ""action"": ""SpellCast"",
+                    ""action"": ""SpellCast_P1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -335,7 +327,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
-                    ""action"": ""SpellCast"",
+                    ""action"": ""SpellCast_P1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -346,18 +338,51 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
-                    ""action"": ""SpellCast"",
+                    ""action"": ""SpellCast_P1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""68b475d9-7e6d-4448-bf7f-7ad7e8e55551"",
-                    ""path"": ""<Keyboard>/rightShift"",
+                    ""id"": ""2daea2af-b0ff-4394-814d-994b514530cc"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard2"",
-                    ""action"": ""Dash"",
+                    ""action"": ""SpellCast_P2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""583ef1a2-72d5-48ed-b91e-0c6a6d33af87"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard2"",
+                    ""action"": ""SpellCast_P2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96670359-cbf3-416e-b2e3-bfb5fcc9dc03"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard2"",
+                    ""action"": ""SpellCast_P2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""08842e86-a233-4148-9b5b-8c239e81dfcf"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard2"",
+                    ""action"": ""SpellCast_P2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -368,7 +393,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
-                    ""action"": ""Dash"",
+                    ""action"": ""Dash_P1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2278c00d-44c5-431a-8685-e4f69167e00b"",
+                    ""path"": ""<Keyboard>/rightShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard2"",
+                    ""action"": ""Dash_P2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -402,10 +438,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
-        m_Player_SpellCast = m_Player.FindAction("SpellCast", throwIfNotFound: true);
-        m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+        m_Player_Move_P1 = m_Player.FindAction("Move_P1", throwIfNotFound: true);
+        m_Player_Move_P2 = m_Player.FindAction("Move_P2", throwIfNotFound: true);
+        m_Player_Jump_P1 = m_Player.FindAction("Jump_P1", throwIfNotFound: true);
+        m_Player_Jump_P2 = m_Player.FindAction("Jump_P2", throwIfNotFound: true);
+        m_Player_SpellCast_P1 = m_Player.FindAction("SpellCast_P1", throwIfNotFound: true);
+        m_Player_SpellCast_P2 = m_Player.FindAction("SpellCast_P2", throwIfNotFound: true);
+        m_Player_Dash_P1 = m_Player.FindAction("Dash_P1", throwIfNotFound: true);
+        m_Player_Dash_P2 = m_Player.FindAction("Dash_P2", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -486,10 +526,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_Move;
-    private readonly InputAction m_Player_Jump;
-    private readonly InputAction m_Player_SpellCast;
-    private readonly InputAction m_Player_Dash;
+    private readonly InputAction m_Player_Move_P1;
+    private readonly InputAction m_Player_Move_P2;
+    private readonly InputAction m_Player_Jump_P1;
+    private readonly InputAction m_Player_Jump_P2;
+    private readonly InputAction m_Player_SpellCast_P1;
+    private readonly InputAction m_Player_SpellCast_P2;
+    private readonly InputAction m_Player_Dash_P1;
+    private readonly InputAction m_Player_Dash_P2;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -502,21 +546,37 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// </summary>
         public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Player/Move".
+        /// Provides access to the underlying input action "Player/Move_P1".
         /// </summary>
-        public InputAction @Move => m_Wrapper.m_Player_Move;
+        public InputAction @Move_P1 => m_Wrapper.m_Player_Move_P1;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Jump".
+        /// Provides access to the underlying input action "Player/Move_P2".
         /// </summary>
-        public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @Move_P2 => m_Wrapper.m_Player_Move_P2;
         /// <summary>
-        /// Provides access to the underlying input action "Player/SpellCast".
+        /// Provides access to the underlying input action "Player/Jump_P1".
         /// </summary>
-        public InputAction @SpellCast => m_Wrapper.m_Player_SpellCast;
+        public InputAction @Jump_P1 => m_Wrapper.m_Player_Jump_P1;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Dash".
+        /// Provides access to the underlying input action "Player/Jump_P2".
         /// </summary>
-        public InputAction @Dash => m_Wrapper.m_Player_Dash;
+        public InputAction @Jump_P2 => m_Wrapper.m_Player_Jump_P2;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SpellCast_P1".
+        /// </summary>
+        public InputAction @SpellCast_P1 => m_Wrapper.m_Player_SpellCast_P1;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SpellCast_P2".
+        /// </summary>
+        public InputAction @SpellCast_P2 => m_Wrapper.m_Player_SpellCast_P2;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Dash_P1".
+        /// </summary>
+        public InputAction @Dash_P1 => m_Wrapper.m_Player_Dash_P1;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Dash_P2".
+        /// </summary>
+        public InputAction @Dash_P2 => m_Wrapper.m_Player_Dash_P2;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -543,18 +603,30 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @Move.started += instance.OnMove;
-            @Move.performed += instance.OnMove;
-            @Move.canceled += instance.OnMove;
-            @Jump.started += instance.OnJump;
-            @Jump.performed += instance.OnJump;
-            @Jump.canceled += instance.OnJump;
-            @SpellCast.started += instance.OnSpellCast;
-            @SpellCast.performed += instance.OnSpellCast;
-            @SpellCast.canceled += instance.OnSpellCast;
-            @Dash.started += instance.OnDash;
-            @Dash.performed += instance.OnDash;
-            @Dash.canceled += instance.OnDash;
+            @Move_P1.started += instance.OnMove_P1;
+            @Move_P1.performed += instance.OnMove_P1;
+            @Move_P1.canceled += instance.OnMove_P1;
+            @Move_P2.started += instance.OnMove_P2;
+            @Move_P2.performed += instance.OnMove_P2;
+            @Move_P2.canceled += instance.OnMove_P2;
+            @Jump_P1.started += instance.OnJump_P1;
+            @Jump_P1.performed += instance.OnJump_P1;
+            @Jump_P1.canceled += instance.OnJump_P1;
+            @Jump_P2.started += instance.OnJump_P2;
+            @Jump_P2.performed += instance.OnJump_P2;
+            @Jump_P2.canceled += instance.OnJump_P2;
+            @SpellCast_P1.started += instance.OnSpellCast_P1;
+            @SpellCast_P1.performed += instance.OnSpellCast_P1;
+            @SpellCast_P1.canceled += instance.OnSpellCast_P1;
+            @SpellCast_P2.started += instance.OnSpellCast_P2;
+            @SpellCast_P2.performed += instance.OnSpellCast_P2;
+            @SpellCast_P2.canceled += instance.OnSpellCast_P2;
+            @Dash_P1.started += instance.OnDash_P1;
+            @Dash_P1.performed += instance.OnDash_P1;
+            @Dash_P1.canceled += instance.OnDash_P1;
+            @Dash_P2.started += instance.OnDash_P2;
+            @Dash_P2.performed += instance.OnDash_P2;
+            @Dash_P2.canceled += instance.OnDash_P2;
         }
 
         /// <summary>
@@ -566,18 +638,30 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="PlayerActions" />
         private void UnregisterCallbacks(IPlayerActions instance)
         {
-            @Move.started -= instance.OnMove;
-            @Move.performed -= instance.OnMove;
-            @Move.canceled -= instance.OnMove;
-            @Jump.started -= instance.OnJump;
-            @Jump.performed -= instance.OnJump;
-            @Jump.canceled -= instance.OnJump;
-            @SpellCast.started -= instance.OnSpellCast;
-            @SpellCast.performed -= instance.OnSpellCast;
-            @SpellCast.canceled -= instance.OnSpellCast;
-            @Dash.started -= instance.OnDash;
-            @Dash.performed -= instance.OnDash;
-            @Dash.canceled -= instance.OnDash;
+            @Move_P1.started -= instance.OnMove_P1;
+            @Move_P1.performed -= instance.OnMove_P1;
+            @Move_P1.canceled -= instance.OnMove_P1;
+            @Move_P2.started -= instance.OnMove_P2;
+            @Move_P2.performed -= instance.OnMove_P2;
+            @Move_P2.canceled -= instance.OnMove_P2;
+            @Jump_P1.started -= instance.OnJump_P1;
+            @Jump_P1.performed -= instance.OnJump_P1;
+            @Jump_P1.canceled -= instance.OnJump_P1;
+            @Jump_P2.started -= instance.OnJump_P2;
+            @Jump_P2.performed -= instance.OnJump_P2;
+            @Jump_P2.canceled -= instance.OnJump_P2;
+            @SpellCast_P1.started -= instance.OnSpellCast_P1;
+            @SpellCast_P1.performed -= instance.OnSpellCast_P1;
+            @SpellCast_P1.canceled -= instance.OnSpellCast_P1;
+            @SpellCast_P2.started -= instance.OnSpellCast_P2;
+            @SpellCast_P2.performed -= instance.OnSpellCast_P2;
+            @SpellCast_P2.canceled -= instance.OnSpellCast_P2;
+            @Dash_P1.started -= instance.OnDash_P1;
+            @Dash_P1.performed -= instance.OnDash_P1;
+            @Dash_P1.canceled -= instance.OnDash_P1;
+            @Dash_P2.started -= instance.OnDash_P2;
+            @Dash_P2.performed -= instance.OnDash_P2;
+            @Dash_P2.canceled -= instance.OnDash_P2;
         }
 
         /// <summary>
@@ -645,32 +729,60 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         /// <summary>
-        /// Method invoked when associated input action "Move" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Move_P1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnMove(InputAction.CallbackContext context);
+        void OnMove_P1(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Jump" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Move_P2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnJump(InputAction.CallbackContext context);
+        void OnMove_P2(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "SpellCast" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Jump_P1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnSpellCast(InputAction.CallbackContext context);
+        void OnJump_P1(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Dash" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Jump_P2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnDash(InputAction.CallbackContext context);
+        void OnJump_P2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SpellCast_P1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSpellCast_P1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SpellCast_P2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSpellCast_P2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Dash_P1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDash_P1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Dash_P2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDash_P2(InputAction.CallbackContext context);
     }
 }
