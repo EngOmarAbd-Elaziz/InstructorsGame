@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: JumpSmashAbility
   m_EditorClassIdentifier: Assembly-CSharp::JumpSmashAbility
   name: Jump Smash Ability
-  cooldownTime: 15
+  cooldownTime: 2
   activeTime: 1
-  jumpStrength: 20
+  radius: 8
+  damageAmount: 40

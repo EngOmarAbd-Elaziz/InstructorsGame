@@ -3,6 +3,7 @@ using UnityEngine;
 public class AbilityGizmosDraw : MonoBehaviour
 {
     [SerializeField] private IceBlastAbility iceBlastSO;
+    [SerializeField] private JumpSmashAbility jumpSmashSO;
 
     // The OnDrawGizmos method is called automatically in the Editor
     private void OnDrawGizmos()
@@ -17,5 +18,11 @@ public class AbilityGizmosDraw : MonoBehaviour
 
         // Call the drawing function from the Ability SO
         iceBlastSO.DrawAbilityGizmo(transform);
+
+        if (jumpSmashSO != null)
+        {
+            Gizmos.color = Color.red;
+            jumpSmashSO.DrawAbilityGizmo(transform);
+        }
     }
 }

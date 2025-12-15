@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float baseMoveSpeed = 0.5f;
-    [SerializeField] private float moveSpeed = 0.5f;
+                     private float moveSpeed;
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private GameObject player;
     [SerializeField] private GameInput gameInput;
@@ -16,8 +16,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 lastMoveDirection;
     private void Start()
     {
-        player.GetComponent<Renderer>().material.color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
+        //player.GetComponent<Renderer>().material.color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
         rigidbody = player.GetComponent<Rigidbody>();
+        moveSpeed = baseMoveSpeed;
     }
 
     private void Update()
