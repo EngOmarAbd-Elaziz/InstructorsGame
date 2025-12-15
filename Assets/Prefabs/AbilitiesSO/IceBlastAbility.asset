@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0afe1e839286f947ab186a159ead2b1, type: 3}
-  m_Name: IceAbility
+  m_Name: IceBlastAbility
   m_EditorClassIdentifier: Assembly-CSharp::IceAbility
   name: Ice
   cooldownTime: 8
-  activeTime: 1
-  cubeTest: {fileID: 7586287480893776359, guid: 97f1b7b93b64af042aa7e57e80b04754, type: 3}
+  activeTime: 0
+  radius: 6
+  coneDegree: 110
+  damage: 20
+  slowFactor: 0.8
+  slowDebuffDuration: 2
