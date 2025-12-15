@@ -4,9 +4,9 @@ using UnityEngine;
 public class HealAbility : AbilitesSO
 {
     private float healAmount = 30f;
-    public override void Activate(GameObject parent)
+    public override void Activate(GameObject parent , Transform target = null)
     {
-       HealthBarUI healthBarUI = parent.GetComponent<PlayerController>().PlayerData.HealthBarUI;
-        healthBarUI.healthSystem.Heal(healAmount);
+       PlayerHealth playerHealth = parent.GetComponent<PlayerHealth>();
+       playerHealth.healthSystem.Heal(healAmount);
     }
 }

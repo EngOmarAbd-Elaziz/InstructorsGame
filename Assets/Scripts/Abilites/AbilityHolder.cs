@@ -5,6 +5,7 @@ public class AbilityHolder
     public string abilityName;
     public KeyCode triggerKey;
     public AbilitesSO abilitySO;
+    public Transform enemyTarget;
 
     private float cooldownTime;
     private float activeTime;
@@ -25,7 +26,7 @@ public class AbilityHolder
 
                 if (Input.GetKeyDown(triggerKey))
                 {
-                    abilitySO.Activate(parent);
+                    abilitySO.Activate(parent , enemyTarget);
                     state = AbilityState.active;
                     activeTime = abilitySO.activeTime;
                 }

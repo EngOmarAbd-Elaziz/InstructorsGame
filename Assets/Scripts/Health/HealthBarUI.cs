@@ -5,23 +5,18 @@ using UnityEngine.UI;
 
 public class HealthBarUI : MonoBehaviour
 {
-    public HealthSystem healthSystem;
-    [SerializeField] private int healthAmount = 100;
-    public event EventHandler OnLowHealthReached;
+    [SerializeField] private PlayerHealth playerHealth;
 
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider followUpHealthSlider;
     private float lerpSpeed = 0.05f;
-
-    [SerializeField] private Button damageButton;
-    [SerializeField] private Button healButton;
 
     [SerializeField] private Image critEffectImage;
     [SerializeField] private TextMeshProUGUI healthAmountText;
 
     private void Start()
     {
-        healthSystem = new HealthSystem(healthAmount);
+        HealthSystem healthSystem = playerHealth.healthSystem;
         
         healthSlider.maxValue = healthSystem.GetHealthMax();   
         followUpHealthSlider.maxValue = healthSystem.GetHealthMax();
@@ -29,32 +24,29 @@ public class HealthBarUI : MonoBehaviour
         healthSlider.value = healthSystem.GetHealth();
         followUpHealthSlider.value = healthSystem.GetHealth();
 
-        healthAmountText.text = healthAmount.ToString();
+        healthAmountText.text = Mathf.Floor(healthSystem.GetHealth()).ToString();
         critEffectImage.gameObject.SetActive(false);
 
-        damageButton.onClick.AddListener( () => { healthSystem.Damage(10);} );
-        healButton.onClick.AddListener( () => {healthSystem.Heal(10);} );
+        playerHealth.healthSystem.OnHealthChanged += HealthSystem_OnHealthChanged;
+    }
+
+    private void HealthSystem_OnHealthChanged(object sender, EventArgs e)
+    {
+        healthSlider.value = playerHealth.healthSystem.GetHealth();
+        healthAmountText.text = healthSlider.value.ToString();
+
+        if (playerHealth.healthSystem.GetHealthPercent() < 0.25f)
+        {
+            critEffectImage.gameObject.SetActive(true);
+        }
+        else { critEffectImage.gameObject.SetActive(false); }
     }
 
     private void Update()
-    {
-        if(healthSlider.value != healthSystem.GetHealth())
-        {
-            healthSlider.value = healthSystem.GetHealth();
-            healthAmountText.text = healthSlider.value.ToString();
-        }
-        
+    {   
         if(healthSlider.value != followUpHealthSlider.value)
         {
-            followUpHealthSlider.value = Mathf.Lerp(followUpHealthSlider.value, healthSystem.GetHealth(), lerpSpeed);
-            healthAmountText.text = healthSlider.value.ToString();
+            followUpHealthSlider.value = Mathf.Lerp(followUpHealthSlider.value, healthSlider.value, lerpSpeed);
         }
-
-        if (healthSystem.GetHealthPercent() < 0.25f)
-        {
-            critEffectImage.gameObject.SetActive(true);
-            OnLowHealthReached?.Invoke(this, EventArgs.Empty);
-        }
-        else { critEffectImage.gameObject.SetActive(false); }
     }
 }

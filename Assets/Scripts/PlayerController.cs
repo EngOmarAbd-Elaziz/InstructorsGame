@@ -5,29 +5,26 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private PlayerData playerData;
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 0.5f;
     [SerializeField] private GameObject player;
     [SerializeField] private GameInput gameInput;
     private Vector2 moveInput;
-
+    private Rigidbody rigidbody;
+    private Vector3 move;
     private void Start()
     {
         player.GetComponent<Renderer>().material.color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
+        rigidbody = player.GetComponent<Rigidbody>();
     }
-
-    //public void OnMove(InputValue inputValue)
-    //{
-    //    moveInput = inputValue.Get<Vector2>();
-    //}
 
     private void Update()
     {
         Vector2 moveInput = gameInput.GetMovementVectorNormalized();
-
-        Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
-        transform.Translate(move * moveSpeed * Time.deltaTime, Space.World);
+        move = new Vector3(moveInput.x, 0, moveInput.y);
     }
 
-    public PlayerData PlayerData => playerData; // get player data like health
+    private void FixedUpdate()
+    {
+        rigidbody.AddForce(move * moveSpeed ,ForceMode.VelocityChange);
+    }
 }

@@ -1,10 +1,46 @@
+using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class FireBallBehavior : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
-    void Update()
+    [SerializeField] private float damageAmount = 10f;
+    private Transform target;
+    private GameObject owner;
+
+    public void SetTarget(Transform newTarget)
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);   
+        target = newTarget;
+    }
+    public void SetOwner(GameObject newOwner)
+    {
+        owner = newOwner;
+    }
+
+    private void Update()
+    {
+        if(target == null) 
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        transform.LookAt(target);
+
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == owner){ return; }
+
+        if (other.TryGetComponent<PlayerHealth>(out PlayerHealth targetHealth))
+        {
+            targetHealth.healthSystem.Damage(damageAmount);
+            Debug.Log("Hit the target");
+            Destroy(gameObject);
+        }
+        else { Destroy(gameObject); }
     }
 }
