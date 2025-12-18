@@ -33,12 +33,14 @@ public class PlayerController : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(lastMoveDirection);
         transform.rotation = Quaternion.Slerp(transform.rotation,
                              targetRotation, Time.deltaTime * rotationSpeed);
-        transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
+        //transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
+        
     }
-    //private void FixedUpdate()
-    //{
-    //    rigidbody.AddForce(moveDirection * moveSpeed ,ForceMode.VelocityChange);
-    //}
+    private void FixedUpdate()
+    {
+        rigidbody.linearVelocity = moveDirection * moveSpeed;
+    }
+
 
     public void ApplySlowEffect(float slowFactor , float duration)
     {
