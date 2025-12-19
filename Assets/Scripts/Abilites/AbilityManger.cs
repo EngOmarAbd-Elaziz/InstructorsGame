@@ -9,6 +9,9 @@ public class AbilityManger : MonoBehaviour
 
     private void Update()
     {
+        if (!GameManger.Instance.IsGamePlaying() || GameManger.Instance.IsGameOver()
+            || GameManger.Instance.isGamePaused) { return; }
+
         // will loop on every ability that is in the list and cast it if the player presses
         // certain key that is in the abilityholderSO
         foreach (AbilityHolder ability in abilities)

@@ -14,20 +14,43 @@ public class HealthBarUI : MonoBehaviour
     [SerializeField] private Image critEffectImage;
     [SerializeField] private TextMeshProUGUI healthAmountText;
 
+    private HealthSystem currentHealthSystem;
     private void Start()
     {
-        HealthSystem healthSystem = playerHealth.healthSystem;
-        
-        healthSlider.maxValue = healthSystem.GetHealthMax();   
-        followUpHealthSlider.maxValue = healthSystem.GetHealthMax();
-        
-        healthSlider.value = healthSystem.GetHealth();
-        followUpHealthSlider.value = healthSystem.GetHealth();
+        playerHealth.OnHealthSystemChanged += PlayerHealth_OnHealthSystemChanged;
 
-        healthAmountText.text = Mathf.Floor(healthSystem.GetHealth()).ToString();
+        SetupHealthSystem();    
+    }
+
+    private void PlayerHealth_OnHealthSystemChanged(object sender, EventArgs e)
+    {
+        SetupHealthSystem();   
+    }
+
+    private void SetupHealthSystem() 
+    {
+        if (currentHealthSystem != null)
+        {
+            currentHealthSystem.OnHealthChanged -= HealthSystem_OnHealthChanged;
+        }
+
+        currentHealthSystem = playerHealth.healthSystem;
+
+        currentHealthSystem.OnHealthChanged += HealthSystem_OnHealthChanged;
+
+        UpdateVisuals();
+    }
+
+    private void UpdateVisuals() 
+    {
+        healthSlider.maxValue = currentHealthSystem.GetHealthMax();
+        followUpHealthSlider.maxValue = currentHealthSystem.GetHealthMax();
+
+        healthSlider.value = currentHealthSystem.GetHealth();
+        followUpHealthSlider.value = currentHealthSystem.GetHealth();
+
+        healthAmountText.text = Mathf.Floor(currentHealthSystem.GetHealth()).ToString();
         critEffectImage.gameObject.SetActive(false);
-
-        playerHealth.healthSystem.OnHealthChanged += HealthSystem_OnHealthChanged;
     }
 
     private void HealthSystem_OnHealthChanged(object sender, EventArgs e)
@@ -48,5 +71,14 @@ public class HealthBarUI : MonoBehaviour
         {
             followUpHealthSlider.value = Mathf.Lerp(followUpHealthSlider.value, healthSlider.value, lerpSpeed);
         }
+    }
+    private void OnDestroy()
+    {
+        // Always clean up!
+        if (currentHealthSystem != null)
+            currentHealthSystem.OnHealthChanged -= HealthSystem_OnHealthChanged;
+
+        if (playerHealth != null)
+            playerHealth.OnHealthSystemChanged -= PlayerHealth_OnHealthSystemChanged;
     }
 }

@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class GameInput : MonoBehaviour
 {
+    public static GameInput Instance { get; private set; }
+    public event EventHandler OnPauseAction;
     public enum PlayerID 
     {
         Player1,
@@ -15,6 +18,18 @@ public class GameInput : MonoBehaviour
     {
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
+
+        // only Player 1 handles the global Pause to prevent double-toggling
+        if (playerID == PlayerID.Player1)
+        {
+            Instance = this; // Set Singleton
+            playerInputActions.Player.Pause.performed += Pause_performed;
+        }
+    }
+
+    public void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) 
+    {
+        OnPauseAction?.Invoke(this ,EventArgs.Empty);
     }
 
     public Vector2 GetMovementVectorNormalized()

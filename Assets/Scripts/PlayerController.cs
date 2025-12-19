@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (!GameManger.Instance.IsGamePlaying() || GameManger.Instance.IsGameOver()
+            || GameManger.Instance.isGamePaused) { return; }
+        
         Vector2 moveInput = gameInput.GetMovementVectorNormalized();
         moveDirection = new Vector3(moveInput.x, 0, moveInput.y);
 
@@ -38,6 +41,8 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (!GameManger.Instance.IsGamePlaying() || GameManger.Instance.IsGameOver()
+            || GameManger.Instance.isGamePaused) { return; }
         rigidbody.linearVelocity = moveDirection * moveSpeed;
     }
 
