@@ -1,4 +1,4 @@
-using System;
+using System;   
 using UnityEngine;
 
 public class GameInput : MonoBehaviour
@@ -17,13 +17,41 @@ public class GameInput : MonoBehaviour
     private void Awake()
     {
         playerInputActions = new PlayerInputActions();
-        playerInputActions.Player.Enable();
 
         // only Player 1 handles the global Pause to prevent double-toggling
         if (playerID == PlayerID.Player1)
         {
             Instance = this; // Set Singleton
             playerInputActions.Player.Pause.performed += Pause_performed;
+        }
+    }
+
+    private void OnEnable()
+    {
+        // enable actions when this component becomes active
+        playerInputActions?.Player.Enable();
+    }
+
+    private void OnDisable()
+    {
+        // disable actions when this component becomes inactive
+        playerInputActions?.Player.Disable();
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe callbacks and release the generated asset to avoid leaks
+        if (playerInputActions != null)
+        {
+            if (playerID == PlayerID.Player1)
+            {
+                playerInputActions.Player.Pause.performed -= Pause_performed;
+                if (Instance == this) Instance = null;
+            }
+
+            // Dispose destroys the underlying InputActionAsset and prevents the finalizer warning
+            playerInputActions.Dispose();
+            playerInputActions = null;
         }
     }
 

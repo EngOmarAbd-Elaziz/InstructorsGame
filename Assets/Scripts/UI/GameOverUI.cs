@@ -1,14 +1,19 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOverUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI winnerText;
+    [SerializeField] private Button playAgainButton;
 
     private void Start()
     {
         GameManger.Instance.OnStateChanged += GameManger_OnStateChanged;
         Hide();
+
+        playAgainButton.onClick.AddListener( () => { RestartGame(); });
     }
 
     private void Update()
@@ -42,5 +47,11 @@ public class GameOverUI : MonoBehaviour
     private void Hide()
     {
         gameObject.SetActive(false);
+    }
+
+    private void RestartGame()
+    {
+        int currentIdx = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentIdx);
     }
 }

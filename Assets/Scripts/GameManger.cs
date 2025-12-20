@@ -29,8 +29,8 @@ public class GameManger : MonoBehaviour
     private State state;
     private float WaitingToStartTimer = 1f;
     private float countDownToStartTimer = 3f;
-    private float gamePlayingToStartTimer = 99f;
-    private float gamePlayingToStartTimerMax = 99f;
+    private float gamePlayingToStartTimer = 30f;
+    private float gamePlayingToStartTimerMax = 3f;
     private float roundOverTimer = 2f;
     
     private int winsNeeded = 3;
@@ -62,12 +62,12 @@ public class GameManger : MonoBehaviour
         switch (state)
         {
             case State.WaitingToStart:
-                WaitingToStartTimer -= Time.deltaTime;
-                if (WaitingToStartTimer < 0f)
-                {
-                    state = State.CountDownToStart;
-                    OnStateChanged?.Invoke(this, EventArgs.Empty);
-                }
+                //WaitingToStartTimer -= Time.deltaTime;
+                //if (WaitingToStartTimer < 0f)
+                //{
+                //    state = State.CountDownToStart;
+                //    OnStateChanged?.Invoke(this, EventArgs.Empty);
+                //}
                 break;
 
             case State.CountDownToStart:
@@ -80,12 +80,30 @@ public class GameManger : MonoBehaviour
                 }
                 break;
 
+            // Inside GameManger.cs -> Update()
+
             case State.GamePlaying:
                 gamePlayingToStartTimer -= Time.deltaTime;
                 if (gamePlayingToStartTimer < 0f)
                 {
-                    state = State.GameOver;
-                    OnStateChanged?.Invoke(this, EventArgs.Empty);
+                    float p1Health = player1Health.healthSystem.GetHealth();
+                    float p2Health = player2Health.healthSystem.GetHealth();
+                    if (p1Health > p2Health)
+                    {
+                        ProcessRoundWin(GameInput.PlayerID.Player1);
+                    }
+                    else if (p2Health > p1Health)
+                    {
+                        ProcessRoundWin(GameInput.PlayerID.Player2);
+                    }
+                    else
+                    {
+                        // Handle DRAW (Equal Health)
+                        state = State.RoundOver;
+                        roundOverTimer = 2f;
+                        OnStateChanged?.Invoke(this, EventArgs.Empty);
+                        Debug.Log("DRAW!");
+                    }
                 }
                 break;
 
@@ -199,5 +217,15 @@ public class GameManger : MonoBehaviour
         // 3. Reset Rotations (Make them face each other)
         player1Health.transform.rotation = p1SpawnPoint.rotation;
         player2Health.transform.rotation = p2SpawnPoint.rotation;
+    }
+
+    public void StartMenuInteractButton()
+    {
+        // Only allow this if we are actually waiting
+        if (state == State.WaitingToStart)
+        {
+            state = State.CountDownToStart;
+            OnStateChanged?.Invoke(this, EventArgs.Empty);
+        }
     }
 }
