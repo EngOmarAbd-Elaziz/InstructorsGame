@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: IceBlastAbility
   m_EditorClassIdentifier: Assembly-CSharp::IceAbility
   name: Ice
-  cooldownTime: 8
+  cooldownTime: 5
   activeTime: 0
   radius: 6
   coneDegree: 110
   damage: 20
-  slowFactor: 0.8
+  slowFactor: 0.6
   slowDebuffDuration: 2

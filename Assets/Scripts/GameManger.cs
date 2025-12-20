@@ -29,8 +29,8 @@ public class GameManger : MonoBehaviour
     private State state;
     private float WaitingToStartTimer = 1f;
     private float countDownToStartTimer = 3f;
-    private float gamePlayingToStartTimer = 30f;
-    private float gamePlayingToStartTimerMax = 3f;
+    private float gamePlayingToStartTimer;
+    private float gamePlayingToStartTimerMax = 40f;
     private float roundOverTimer = 2f;
     
     private int winsNeeded = 3;
