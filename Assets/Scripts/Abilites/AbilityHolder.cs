@@ -7,11 +7,17 @@ public class AbilityHolder
     public AbilitesSO abilitySO;
     public Transform enemyTarget;
 
-    private float cooldownTime;
+    public float cooldownTime;
     private float activeTime;
+<<<<<<< HEAD
     private AbilityState state = AbilityState.ready;
 
     enum AbilityState
+=======
+    public AbilityState state = AbilityState.ready;
+    
+    public enum AbilityState
+>>>>>>> f701581f65074aaba322fb59c267a050345dd216
     {
         ready,
         active,

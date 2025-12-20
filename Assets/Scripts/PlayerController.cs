@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (!GameManger.Instance.IsGamePlaying() || GameManger.Instance.IsGameOver()
+            || GameManger.Instance.isGamePaused) { return; }
+        
         Vector2 moveInput = gameInput.GetMovementVectorNormalized();
         moveDirection = new Vector3(moveInput.x, 0, moveInput.y);
 
@@ -33,12 +36,16 @@ public class PlayerController : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(lastMoveDirection);
         transform.rotation = Quaternion.Slerp(transform.rotation,
                              targetRotation, Time.deltaTime * rotationSpeed);
-        transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
+        //transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
+        
     }
-    //private void FixedUpdate()
-    //{
-    //    rigidbody.AddForce(moveDirection * moveSpeed ,ForceMode.VelocityChange);
-    //}
+    private void FixedUpdate()
+    {
+        if (!GameManger.Instance.IsGamePlaying() || GameManger.Instance.IsGameOver()
+            || GameManger.Instance.isGamePaused) { return; }
+        rigidbody.linearVelocity = moveDirection * moveSpeed;
+    }
+
 
     public void ApplySlowEffect(float slowFactor, float duration)
     {

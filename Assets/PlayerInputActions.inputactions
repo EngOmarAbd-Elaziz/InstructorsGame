@@ -77,6 +77,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "c8df1a23-2e52-4b42-ba02-3df156e1abf3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -149,7 +158,7 @@
                 {
                     "name": "up",
                     "id": "4193c4b1-93b1-44a8-a977-6edd3a1554dc",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard2",
@@ -160,7 +169,7 @@
                 {
                     "name": "down",
                     "id": "90fba84d-98bd-41c0-8247-118696283fad",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard2",
@@ -171,7 +180,7 @@
                 {
                     "name": "left",
                     "id": "b15afbd4-ca28-490c-afb5-790a665a3237",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard2",
@@ -182,7 +191,7 @@
                 {
                     "name": "right",
                     "id": "f54db486-2a44-415c-8f5c-5ec91e2f1cdc",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard2",
@@ -319,6 +328,17 @@
                     "processors": "",
                     "groups": ";Keyboard2",
                     "action": "Dash_P2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4d70fd00-8c20-461d-a8a7-dde47b95c12a",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

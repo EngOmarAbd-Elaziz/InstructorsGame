@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: HealAbility
   m_EditorClassIdentifier: Assembly-CSharp::HealAbility
   name: Heal
-  cooldownTime: 10
+  cooldownTime: 4
   activeTime: 0.1

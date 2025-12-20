@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FireBallAbility
   m_EditorClassIdentifier: Assembly-CSharp::FireBallAbility
   name: FireBall
-  cooldownTime: 0.25
+  cooldownTime: 0.3
   activeTime: 0
   fireBallPrefab: {fileID: 5981928208513840586, guid: bc106a2945749904aa75a29c157652d0, type: 3}
   spawnDistance: 1
