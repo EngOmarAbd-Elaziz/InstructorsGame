@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float baseMoveSpeed = 0.5f;
-                     private float moveSpeed;
+    private float moveSpeed;
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private GameObject player;
     [SerializeField] private GameInput gameInput;
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     //    rigidbody.AddForce(moveDirection * moveSpeed ,ForceMode.VelocityChange);
     //}
 
-    public void ApplySlowEffect(float slowFactor , float duration)
+    public void ApplySlowEffect(float slowFactor, float duration)
     {
         StartCoroutine(HandleSlowDebuff(slowFactor, duration));
     }
@@ -49,5 +49,5 @@ public class PlayerController : MonoBehaviour
         moveSpeed = baseMoveSpeed * slowFactor;
         yield return new WaitForSeconds(duration);
         moveSpeed = baseMoveSpeed;
-    } 
+    }
 }

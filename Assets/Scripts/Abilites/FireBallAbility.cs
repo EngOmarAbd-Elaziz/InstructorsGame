@@ -7,7 +7,7 @@ public class FireBallAbility : AbilitesSO
     public float spawnDistance = 1f;
     public float appearTime = 3f;
 
-    public override void Activate(GameObject parent , Transform target = null)
+    public override void Activate(GameObject parent, Transform target = null)
     {
         Vector3 spawnDirection;
         if (target != null)
@@ -21,13 +21,13 @@ public class FireBallAbility : AbilitesSO
 
         GameObject fireball = Instantiate(fireBallPrefab, spawnPosition, spawnRotation);
         Destroy(fireball, appearTime);
-        
+
         FireBallBehavior fireBallBehavior = fireball.GetComponent<FireBallBehavior>();
-        
-        if(fireBallBehavior != null) 
+
+        if (fireBallBehavior != null)
         {
             fireBallBehavior.SetOwner(parent);
-            if (target != null) 
+            if (target != null)
             {
                 fireBallBehavior.SetTarget(target);
             }

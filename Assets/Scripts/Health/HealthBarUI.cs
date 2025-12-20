@@ -17,10 +17,10 @@ public class HealthBarUI : MonoBehaviour
     private void Start()
     {
         HealthSystem healthSystem = playerHealth.healthSystem;
-        
-        healthSlider.maxValue = healthSystem.GetHealthMax();   
+
+        healthSlider.maxValue = healthSystem.GetHealthMax();
         followUpHealthSlider.maxValue = healthSystem.GetHealthMax();
-        
+
         healthSlider.value = healthSystem.GetHealth();
         followUpHealthSlider.value = healthSystem.GetHealth();
 
@@ -43,8 +43,8 @@ public class HealthBarUI : MonoBehaviour
     }
 
     private void Update()
-    {   
-        if(healthSlider.value != followUpHealthSlider.value)
+    {
+        if (healthSlider.value != followUpHealthSlider.value)
         {
             followUpHealthSlider.value = Mathf.Lerp(followUpHealthSlider.value, healthSlider.value, lerpSpeed);
         }

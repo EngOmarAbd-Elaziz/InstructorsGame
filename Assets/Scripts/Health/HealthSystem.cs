@@ -8,11 +8,11 @@ public class HealthSystem
     public event EventHandler OnHealthChanged;
     public event EventHandler OnLowHealthReached;
     private bool isLowHealth = false;
-    public HealthSystem(float healthMax) {this.health = healthMax; this.healthMax = healthMax;}
-    public float GetHealth(){ return health; } 
-    public float GetHealthMax(){ return healthMax; } 
-    public float GetHealthPercent(){ return health / healthMax; } 
-    public void Damage(float damageAmount) 
+    public HealthSystem(float healthMax) { this.health = healthMax; this.healthMax = healthMax; }
+    public float GetHealth() { return health; }
+    public float GetHealthMax() { return healthMax; }
+    public float GetHealthPercent() { return health / healthMax; }
+    public void Damage(float damageAmount)
     {
         health -= damageAmount;
         if (health < 0) { health = 0; }

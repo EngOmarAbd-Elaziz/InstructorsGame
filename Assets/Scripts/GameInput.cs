@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameInput : MonoBehaviour
 {
-    public enum PlayerID 
+    public enum PlayerID
     {
         Player1,
         Player2
@@ -10,7 +10,7 @@ public class GameInput : MonoBehaviour
 
     [SerializeField] private PlayerID playerID;
     private PlayerInputActions playerInputActions;
-    
+
     private void Awake()
     {
         playerInputActions = new PlayerInputActions();
@@ -23,7 +23,7 @@ public class GameInput : MonoBehaviour
         {
             return playerInputActions.Player.Move_P1.ReadValue<Vector2>();
         }
-        else 
+        else
         {
             return playerInputActions.Player.Move_P2.ReadValue<Vector2>();
         }

@@ -4,14 +4,14 @@ public class JumpSmashExecutor : MonoBehaviour
 {
     private JumpSmashAbility abilityData;
 
-    public void ExecuteSmash(JumpSmashAbility ability) 
+    public void ExecuteSmash(JumpSmashAbility ability)
     {
         abilityData = ability;
         Animator anim = GetComponent<Animator>();
         anim.SetTrigger("JumpSmash");
     }
 
-    public void OnAnimationSmashEvent() 
+    public void OnAnimationSmashEvent()
     {
         float radius = abilityData.radius;
         float damageAmount = abilityData.damageAmount;

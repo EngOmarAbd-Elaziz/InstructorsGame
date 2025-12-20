@@ -7,7 +7,7 @@ public class FireBallBehavior : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float damageAmount = 10f;
     private Transform target;
-    private GameObject owner;
+    [SerializeField] private GameObject owner;
 
     public void SetTarget(Transform newTarget)
     {
@@ -20,7 +20,7 @@ public class FireBallBehavior : MonoBehaviour
 
     private void Update()
     {
-        if(target == null) 
+        if (target == null)
         {
             Destroy(gameObject);
             return;
@@ -33,7 +33,7 @@ public class FireBallBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == owner){ return; }
+        if (other.gameObject == owner) { return; }
 
         if (other.TryGetComponent<PlayerHealth>(out PlayerHealth targetHealth))
         {

@@ -9,7 +9,7 @@ public class IceBlastAbility : AbilitesSO
     [SerializeField] private float slowDebuffDuration = 2f;
     public override void Activate(GameObject parent, Transform target = null)
     {
-        DetectEnemiesInConeAndDamage(parent , radius , coneDegree , damage);
+        DetectEnemiesInConeAndDamage(parent, radius, coneDegree, damage);
     }
 
     public void DetectEnemiesInConeAndDamage(GameObject caster, float radius, float coneAngle, float damage)

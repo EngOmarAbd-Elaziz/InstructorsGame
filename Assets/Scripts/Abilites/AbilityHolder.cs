@@ -10,7 +10,7 @@ public class AbilityHolder
     private float cooldownTime;
     private float activeTime;
     private AbilityState state = AbilityState.ready;
-    
+
     enum AbilityState
     {
         ready,
@@ -26,7 +26,7 @@ public class AbilityHolder
 
                 if (Input.GetKeyDown(triggerKey))
                 {
-                    abilitySO.Activate(parent , enemyTarget);
+                    abilitySO.Activate(parent, enemyTarget);
                     state = AbilityState.active;
                     activeTime = abilitySO.activeTime;
                 }

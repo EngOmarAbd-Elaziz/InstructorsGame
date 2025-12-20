@@ -9,7 +9,7 @@ public class JumpSmashAbility : AbilitesSO
     {
         JumpSmashExecutor executor = parent.GetComponentInChildren<JumpSmashExecutor>();
 
-        if (executor != null) 
+        if (executor != null)
         {
             executor.ExecuteSmash(this);
         }
